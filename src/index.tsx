@@ -1,5 +1,10 @@
 import { createRoot } from 'react-dom/client'
-import { Landing } from './pages/Landing'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRouter } from 'Router/appRouter'
 
 const root = createRoot(document.getElementById('root') as HTMLElement)
-root.render(<Landing></Landing>)
+root.render(
+    <BrowserRouter>
+        <AppRouter />
+    </BrowserRouter>
+)
