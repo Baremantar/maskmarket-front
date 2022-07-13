@@ -1,10 +1,10 @@
 export const UserActions = {
-    ACTION_NAME: 'ACTION_NAME',
+    ACTION_NAME: 'CHANGE_NAME',
 }
 
-type EXAMPLE = {
-    type: 'ACTION_NAME'
-    payload: 'SOMETHING'
+type ChangeName = {
+    type: 'CHANGE_NAME'
+    payload: string
 }
 
-export type UserActionsType = EXAMPLE
+export type UserActionsType = ChangeName
