@@ -1,0 +1,5 @@
+.webpack.config.js
+./build
+./node_modules
+.env
+.gitignore
