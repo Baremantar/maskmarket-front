@@ -10,6 +10,9 @@ export const initialState: IState = {
 
 export const UserReducer = (state = initialState, action: Actions): IState => {
     switch (action.type) {
+        case 'CHANGE_NAME': {
+            return { ...state, name: action.payload }
+        }
         default:
             return state
     }
