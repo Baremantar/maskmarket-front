@@ -1,7 +1,9 @@
+import { Container } from './styled'
+
 export const Landing = () => {
     return (
-        <main>
+        <Container>
             <h1>Landing page</h1>
-        </main>
+        </Container>
     )
 }
