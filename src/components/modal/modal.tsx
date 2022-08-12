@@ -1,5 +1,5 @@
 import { Dispatch, FC, MouseEvent, ReactNode, SetStateAction } from 'react'
-import { Container, ModalWindow } from './styled'
+import { Container, ModalWindow } from './modal.styles'
 
 interface IModal {
     children: ReactNode

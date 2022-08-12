@@ -1,7 +1,7 @@
-import { Footer } from 'components/footer'
-import { Header } from 'components/header'
+import { Footer } from 'components/footer/footer'
+import { Header } from 'components/header/header'
 import { FC, ReactNode } from 'react'
-import { Container } from './styled'
+import { Container } from './baseLayour.styles'
 
 interface ILayout {
     children: ReactNode
