@@ -1,4 +1,4 @@
-import { Footer } from 'components/footer'
+import { Footer } from 'components/footer/footer'
 import { Header } from 'components/header'
 import { FC, ReactNode } from 'react'
 import { Container } from './styled'
