@@ -4,9 +4,13 @@ import styled from 'styled-components'
 export const Container = styled.div`
     & {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 60px;
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+        }
     }
 `
 
@@ -15,6 +19,10 @@ export const Block = styled.div`
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        @media screen and (max-width: 1000px) {
+            align-items: center;
+        }
     }
 `
 

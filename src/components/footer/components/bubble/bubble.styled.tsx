@@ -7,5 +7,11 @@ export const Bubble = styled.div`
         background-color: white;
         width: 255px;
         height: 255px;
+        margin-right: 24px;
+
+        @media screen and (max-width: 1000px) {
+            width: 128px;
+            height: 128px;
+        }
     }
 `
