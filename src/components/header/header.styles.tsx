@@ -32,6 +32,7 @@ export const Logo = styled.div`
     padding: 1rem 1.5rem;
     border-radius: 16px;
     font-variant: small-caps;
+    text-transform: uppercase;
 `
 
 export const SomeButton = styled.button`

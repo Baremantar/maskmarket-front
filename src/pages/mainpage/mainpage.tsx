@@ -1,4 +1,4 @@
-import { Container } from './styled'
+import { Container } from './mainpage.styles'
 
 export const MainPage = () => {
     return (

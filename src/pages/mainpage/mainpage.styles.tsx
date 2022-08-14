@@ -8,6 +8,5 @@ export const Container = styled.main`
         flex: 1 1 auto;
         max-width: 95vw;
         width: 95vw;
-        min-height: 95vh;
     }
 `
