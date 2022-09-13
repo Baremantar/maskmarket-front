@@ -7,4 +7,5 @@ function getValue(value: string | undefined, defaultValue = '') {
 export const appConfig = {
     backendUrl: getValue(backendUrl, 'localhost:3000'),
     nodeEnv: getValue(nodeEnv, 'production'),
+    marketName: 'maskmarket',
 }

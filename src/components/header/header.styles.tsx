@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const FlexWrapper = styled.div`
+export const HeaderContainer = styled.div`
     & {
         width: 100vw;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
     }
 `
