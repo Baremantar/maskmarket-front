@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        gap: 1rem;
         padding: 1rem;
     }
 `
