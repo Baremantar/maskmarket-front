@@ -5,7 +5,7 @@ export const SearchField = styled.input`
         flex-grow: 2;
         outline: none;
         border: none;
-        color: #b4b4b4;
+        color: inherit;
         background: transparent;
         font-size: inherit;
         margin: 1rem;
@@ -15,16 +15,25 @@ export const SearchField = styled.input`
     }
 `
 
-export const Container = styled.form`
+type ContainerPropsType = {
+    focused: boolean
+}
+
+export const Container = styled.form<ContainerPropsType>`
     &{
         display: flex;
-        border: 1px solid #6b6b6b;
+        border: 2px solid black;
         border-radius: 2rem;
         min-width: 50%;
         flex-direction: row;
         font-size: large;
         gap: 1rem;
         overflow: hidden;
+        @media (prefers-color-scheme: dark) {
+            border-color: #6b6b6b;
+        }
+        background-color: ${props => { return props.focused === true ? 'transparent' : 'rgba(34, 34, 34, 0.05);' }};
+        transition: 0.5s;
     }
 `
 
@@ -41,7 +50,7 @@ export const Button = styled.button`
         padding: 0px 1rem;
         transition: 0.2s ease-out;
     }
-    &:hover{
-        background-color: #6b6b6b;
+    &:hover, &:focus{
+        background-color: #e5e5e5;
     }
 `
