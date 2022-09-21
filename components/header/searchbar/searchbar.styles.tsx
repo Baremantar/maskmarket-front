@@ -52,7 +52,7 @@ export const Button = styled.button`
         padding: 0px 1rem;
         transition: 0.2s ease-out;
     }
-    &:hover, &:focus{
+    &:hover{
         background-color: #e5e5e5;
         @media (prefers-color-scheme: dark) {
             background-color: #808080;
@@ -63,5 +63,8 @@ export const Button = styled.button`
         @media (prefers-color-scheme: dark) {
             background-color: #e5e5e5;
         }
+    }
+    &:focus:not(:hover):not(:active) {
+        background-color: #ececec;
     }
 `
