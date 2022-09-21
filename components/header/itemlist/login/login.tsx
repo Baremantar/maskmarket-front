@@ -1,9 +1,11 @@
 import { Button } from "./login.styes"
 
-export const Login = () => {
+const Login = () => {
     return (
         <Button>
             Login
         </Button>
     )
 }
+
+export default Login

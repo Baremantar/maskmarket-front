@@ -23,17 +23,19 @@ export const Container = styled.form<ContainerPropsType>`
     &{
         display: flex;
         border: 2px solid black;
-        border-radius: 2rem;
+        border-radius: 1.5rem;
         min-width: 50%;
         flex-direction: row;
         font-size: large;
         gap: 1rem;
         overflow: hidden;
+
+        background-color: ${props => { return props.focused === true ? 'transparent' : 'rgba(34, 34, 34, 0.05);' }};
+        transition: 0.5s; 
         @media (prefers-color-scheme: dark) {
             border-color: #6b6b6b;
+            background-color: ${props => { return props.focused === true ? 'rgba(202, 202, 202, 0.185);' : 'transparent;' }};
         }
-        background-color: ${props => { return props.focused === true ? 'transparent' : 'rgba(34, 34, 34, 0.05);' }};
-        transition: 0.5s;
     }
 `
 
@@ -52,5 +54,14 @@ export const Button = styled.button`
     }
     &:hover, &:focus{
         background-color: #e5e5e5;
+        @media (prefers-color-scheme: dark) {
+            background-color: #808080;
+        }
+    }
+    &:active {
+        background-color: #808080;
+        @media (prefers-color-scheme: dark) {
+            background-color: #e5e5e5;
+        }
     }
 `
