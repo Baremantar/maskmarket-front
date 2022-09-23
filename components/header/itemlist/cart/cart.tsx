@@ -1,10 +1,11 @@
-import { SCart } from "./wishlist.styles"
-
+import { SCart } from "./cart.styles"
 
 const Cart = () => {
 
     return (
-        <SCart />
+        <div>
+            <SCart />
+        </div>
     )
 }
 

@@ -11,6 +11,7 @@ export const SCart = styled(Cart)`
             filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(239deg) brightness(105%) contrast(101%);
         }
         transition: 0.3s;
+        pointer-events: visible;
     }
     &:hover {
         transform: scale(110%);
