@@ -1,10 +1,15 @@
-import { LogoContainer, Text } from "./logo.module"
+import Link from "next/link"
+import { Container, Text } from "./logo.module"
 
 const Logo = () => {
-    return(
-        <LogoContainer>
-            <Text>maskmarket</Text>
-        </LogoContainer>
+    return (
+        <Container>
+            <Link href={'/'}>
+                <a>
+                    <Text>maskmarket</Text>
+                </a>
+            </Link>
+        </Container>
     )
 }
 
