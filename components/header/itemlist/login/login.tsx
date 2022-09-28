@@ -10,7 +10,15 @@ const Login = () => {
     return (
         <Fragment>
             <Modal active={modalVisible} setActive={setModalVisible}>
-                Hello, world!
+                <form style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem'
+                }} onSubmit={e => e.preventDefault()}>
+                    <input />
+                    <input />
+                    <button>Login</button>
+                </form>
             </Modal>
             <Button onClick={openModal}>
                 Login

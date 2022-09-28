@@ -66,5 +66,9 @@ export const Button = styled.button`
     }
     &:focus:not(:hover):not(:active) {
         background-color: #ececec;
+        color: black;
+        @media (prefers-color-scheme: dark) {
+            background-color: #e5e5e5;
+        }
     }
 `
