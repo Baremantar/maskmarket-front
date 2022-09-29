@@ -1,14 +1,14 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Header from '../components/header/header'
-import { Fragment } from 'react'
+import Providers from '../components/providers'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Fragment>
+    <Providers>
       <Header />
       <Component {...pageProps} />
-    </Fragment>
+    </Providers>
   )
 }
 
