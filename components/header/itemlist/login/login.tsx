@@ -1,9 +1,13 @@
+import { useActions } from "hooks/useActions"
+import { useAppDispatch, useAppSelector } from "hooks/useAppSelector"
 import { Fragment, useState, MouseEvent, FormEvent } from "react"
 import Modal from "../../../modal/modal"
 import { Button } from "./login.styes"
 
 const Login = () => {
     const [modalVisible, setModalVisible] = useState<boolean>(false)
+    const { token } = useAppSelector(state => state.auth)
+    const { fetchLogin } = useActions()
     function openModal() {
         setModalVisible(true)
     }
