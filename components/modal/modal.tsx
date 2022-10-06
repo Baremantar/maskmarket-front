@@ -1,3 +1,4 @@
+import ClientOnlyPortal from "components/clientOnlyPortal"
 import { FC, Fragment, ReactNode, MouseEvent, Dispatch, SetStateAction } from "react"
 import { Background, Container } from "./modal.styles"
 
@@ -9,11 +10,13 @@ type ModalPropsType = {
 
 const Modal: FC<ModalPropsType> = ({ children, active, setActive }) => {
     return active ? (
-        <Background onClick={() => { setActive(false) }}>
-            <Container onClick={e => {e.stopPropagation()}}>
-                {children}
-            </Container>
-        </Background>
+        <ClientOnlyPortal selector="modal">
+            <Background onClick={() => { setActive(false) }}>
+                <Container onClick={e => { e.stopPropagation() }}>
+                    {children}
+                </Container>
+            </Background>
+        </ClientOnlyPortal>
     ) : null
 }
 

@@ -1,7 +1,7 @@
 import { ReactNode, FunctionComponent } from "react"
 import { ThemeProvider } from "styled-components"
 import { Provider } from 'react-redux'
-import store from "redux/auth/store"
+import store from "redux/store"
 
 type ProvidersPropsType = {
     children: ReactNode
