@@ -27,22 +27,3 @@ export const fetchLogin = createAsyncThunk('auth/fetchLogin', async (data, { rej
         }
     }
 })
-
-export const fetchHandlers = (builder: ActionReducerMapBuilder<StateType>) => {
-    builder.addCase(fetchLogin.pending, (state) => {
-        state.fetching = true
-    })
-    builder.addCase(fetchLogin.rejected, (state, action) => {
-        state.fetching = false
-        if (action.payload instanceof Error) {
-            state.error = action.payload.message
-        }
-    })
-    builder.addCase(fetchLogin.fulfilled, (state, action) => {
-        if (!action.payload) {
-            return
-        }
-
-        const { token } = action.payload
-    })
-}
