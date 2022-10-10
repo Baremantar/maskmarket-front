@@ -8,5 +8,4 @@ const connection =  new pg.Pool({
   database: 'users'
 })
 
-
 export default connection

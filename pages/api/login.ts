@@ -19,8 +19,13 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   const { password, username } = req.body
-  const query = 'INSERT INTO user VALUES(2, zmeyaa, enter)'
-  connection.query(query)
+  const query = 'SELECT * FROM "user"'
+  connection.query(query, (err, result)=>{
+    if(err){
+      throw new Error('Error!')
+    }
+    console.log(result.rows)
+  })
   const JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
   res.status(200).json({ token: JWT })
 }
