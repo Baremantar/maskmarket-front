@@ -1,5 +1,7 @@
 import { ReactNode, FunctionComponent } from "react"
 import { ThemeProvider } from "styled-components"
+import { Provider } from 'react-redux'
+import store from "redux/store"
 
 type ProvidersPropsType = {
     children: ReactNode
@@ -7,7 +9,7 @@ type ProvidersPropsType = {
 // 'rgb(214, 214, 214)'
 export const theme = {
     dark: {
-        text: 'orange',
+        text: 'rgb(214, 214, 214)',
         background: 'rgb(54, 54, 54)'
     },
     light: {
@@ -16,11 +18,13 @@ export const theme = {
     }
 }
 
-const Providers: FunctionComponent<ProvidersPropsType> = ({children}) => {
-    return(
-        <ThemeProvider theme={theme}>
-            {children}
-        </ThemeProvider>
+const Providers: FunctionComponent<ProvidersPropsType> = ({ children }) => {
+    return (
+        <Provider store={store}>
+            <ThemeProvider theme={theme}>
+                {children}
+            </ThemeProvider>
+        </Provider>
     )
 }
 
