@@ -22,9 +22,10 @@ export default function handler(
   const query = 'SELECT * FROM "user"'
   connection.query(query, (err, result)=>{
     if(err){
-      throw new Error('Error!')
+      res.status(400).send({
+        error: 'Server error'
+      })
     }
-    console.log(result.rows)
   })
   const JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
   res.status(200).json({ token: JWT })
