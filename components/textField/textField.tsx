@@ -12,7 +12,7 @@ const TextField: FunctionComponent<TextFieldProps> = ({ label, name, ...rest }) 
             <Label htmlFor={name}>
                 {label}
             </Label>
-            <TextArea id={name} {...rest} />
+            <TextArea id={name} name={name} {...rest} />
         </Container >
     )
 }

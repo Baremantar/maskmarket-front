@@ -1,4 +1,4 @@
-import { Dispatch, Fragment, FunctionComponent, SetStateAction } from "react"
+import { Dispatch, FormEvent, FormEventHandler, Fragment, FunctionComponent, SetStateAction } from "react"
 import { FlexGroup, Form, GoToRegister } from "./login.styles"
 import LinkedText from "components/linkedText/linkedText"
 import RememberMe from "../../rememberMe/rememberMe"
@@ -9,10 +9,15 @@ type ViewProps = {
     changeView: Dispatch<SetStateAction<"login" | "register">>
 }
 
+function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const formData = new FormData(event.target as HTMLFormElement)
+    const data = Object.fromEntries(formData)
+}
+
 const Login: FunctionComponent<ViewProps> = ({ changeView }) => {
+
     return (
-
-
         <Fragment>
 
             <GoToRegister>
@@ -22,7 +27,7 @@ const Login: FunctionComponent<ViewProps> = ({ changeView }) => {
                 </Button>
             </GoToRegister>
 
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <TextField
                     autoComplete="email"
                     type="email"
