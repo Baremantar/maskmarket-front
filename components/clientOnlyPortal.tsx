@@ -8,7 +8,6 @@ type PortalProps = {
 
 export default function ClientOnlyPortal({ children, selector }: PortalProps) {
   const ref = useRef<Element | null>(null)
-  console.log(ref.current)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {

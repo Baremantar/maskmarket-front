@@ -1,29 +1,11 @@
-import Link from "next/link"
-import { Form } from "./authForm.styles"
-import RememberMe from "./rememberMe/rememberMe"
-import TextField from "./textField/textField"
+import { useState } from "react"
+import Login from "./views/login/login"
+import Register from "./views/register/register.styles"
 
 const AuthForm = () => {
-    return (
-        <>
-            <h4>
-                Register
-            </h4>
-            <Form>
-                <TextField autoComplete="email" type="email" name="email" label="Email address" />
-                <TextField autoComplete="off" type="password" name="password" label="Password" />
+    const [view, setView] = useState<'login' | 'register'>('login')
 
-                <RememberMe label="Remember me" name="rememberMe" />
-
-                <Link href={'/password_restore'}>
-                    <a>
-                        Forgot password
-                    </a>
-                </Link>
-                <button>Login</button>
-            </Form>
-        </>
-    )
+    return view === 'login' ? <Login changeView={setView} /> : <Register />
 }
 
 export default AuthForm

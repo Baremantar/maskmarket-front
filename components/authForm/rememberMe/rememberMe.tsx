@@ -9,8 +9,8 @@ interface CheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
 const RememberMe: FunctionComponent<CheckBoxProps> = ({ label, name }) => {
     return (
         <Container>
-            <Label htmlFor={name}>{label}</Label>
             <CheckBox type={'checkbox'} id={name} />
+            <Label htmlFor={name}>{label}</Label>
         </Container>
     )
 }
