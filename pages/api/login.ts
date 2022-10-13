@@ -1,5 +1,22 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import pg from 'pg'
+
+const Client = new pg.Client({
+  host: 'localhost',
+  port: 5432,
+  user: 'postgres',
+  password: 'enter1zexlol1',
+  database: 'users'
+})
+
+Client.connect()
+
+Client.query('SELECT * from users;', (err, res) => {
+  console.log(err ? err.stack : res.rows[0].message) // Hello World!
+  Client.end()
+})
+
 
 type Data = {
   token?: string
@@ -8,7 +25,7 @@ type Data = {
 
 interface LoginRequest extends NextApiRequest {
   body: {
-    username: string
+    email: string
     password: string
   }
 }
@@ -17,11 +34,6 @@ export default function handler(
   req: LoginRequest,
   res: NextApiResponse<Data>
 ) {
-  if (req.method !== 'POST') {
-    res.status(400).send({ error: "Only post available" })
-  }
-  const JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
-  const { password, username } = req.body
-  console.log(password, username)
-  res.status(200).json({ token: JWT })
+  const { password, email } = req.body
+  res.status(200)
 }
